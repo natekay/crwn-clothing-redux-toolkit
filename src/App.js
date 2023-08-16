@@ -22,7 +22,8 @@ const App = () => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      console.log(setCurrentUser(user));
+      const pickedUser = 
+      user && (({accessToken, email}) => ({accessToken, email}))(user);
       dispatch(setCurrentUser(user));
     });
 
